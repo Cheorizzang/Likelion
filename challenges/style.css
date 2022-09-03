@@ -28,10 +28,9 @@ body {
     color: #ffffff;
 }
 
-.Foxpic {
-    display: flex;
-    place-content: space-between space-evenly;
-
+.pic.fox {
+    margin-bottom: -5px;
+    text-align: center;
 }
 
 .name {
