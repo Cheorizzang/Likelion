@@ -24,7 +24,8 @@ body {
 }
 
 .Foxpic {
-    text-align: center;
+    display: flex;
+    place-content: space-between space-evenly;
 }
 
 .name {
