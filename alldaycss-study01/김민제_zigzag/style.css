@@ -1,0 +1,131 @@
+/* Font */
+:root {
+    font-family: 'Montserrat', sans-serif;
+	/*
+	font-weight: 500;
+	font-weight: 700;
+	*/
+}
+
+/* Layouts */
+body {
+	background-color: #51318b;
+}
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	width: 1080px;
+	margin: 100px auto;
+}
+
+/* header */
+header {
+	display: flex;
+	width: 100%;
+}
+
+h1 {
+	flex-basis: 26%;
+	color: #ffffff;
+	font-size: 40px;
+}
+
+.underline {
+	box-shadow: inset 0 -20px orangered;
+}
+
+.line {
+	width: 80px;
+	height: 2px;
+	background-color: #bd8fe8;
+	position: relative;
+	top:60px;
+}
+
+p {
+	width: 450px;
+	padding-top: 15px;
+	margin-left: 30px;
+	font-size: 14px;
+	line-height: 24px;
+	color: #a887e1;
+}
+
+p::before {
+
+}
+
+/* main */
+main {
+	display: flex;
+	flex-direction: column;
+	margin-top: 100px;
+}
+
+figure {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	height: 162px;
+	margin-bottom: 24px;
+}
+
+.fig-wrap {
+	position: relative;
+	flex-basis: 26%;
+}
+
+img {
+	width: 280px;
+	height: 162px;
+	opacity: 50%;
+}
+
+h2 {
+	position: absolute;
+	text-align: center;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: #ffffff;
+	font-size: 30px;
+}
+
+figcaption {
+	width: 100%;
+	background-color: #ffffff;
+	padding: 24px;
+	
+}
+
+h3 {
+	color: #51318b;
+	font-size: 18px;
+	margin-bottom: 32px;
+	font-weight: bold;
+}
+
+ul {
+	list-style: none;
+}
+
+ul li::before {
+	content: "\25CF";
+	color: #bd8fe8;
+	display: inline-block;
+	width: 1.5em;
+}
+
+li {
+	padding: 5px;
+	font-size: 14px;
+}
+
+figure:nth-child(2) {
+	flex-direction: row-reverse;
+}
+
+figure:last-child {
+	margin-bottom: 0;
+}
