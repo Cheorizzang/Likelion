@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>absolute</title>
+    <style>
+        .father { 
+            background-color: aqua;
+            border: 1px solid black;
+            height: 100px;
+        }
+        span {
+            position: absolute;
+            background-color: darkgoldenrod;
+            width: 100px;
+            height: 100px;
+        }
+        /* .one {
+            right: 50%;
+        } */
+        .three {
+            margin-left: 200px; 
+        }
+        .four {
+            position: absolute;
+            background-color: blueviolet;
+        }
+        .five {
+            position: absolute;
+            background-color: orchid;
+        }
+    </style>
+</head>
+<body>
+    <div class="father">
+        <!-- <span class="one">인라인요소1</span>
+        <span class="two">인라인요소2</span>
+        <button class="three">인라인버튼</button> -->
+        <div class="four">블록레벨요소1</div>
+        <div class="five">블록레벨요소2</div>
+    </div>
+</body>
+</html>

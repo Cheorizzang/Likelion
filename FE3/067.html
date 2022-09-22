@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>select box 실습</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        .btn-select {
+            width: 200px;
+            height: 40px;
+            background-color: bisque;
+        }
+        .list-member {
+            /* display: none; */
+            width: 200px;
+            height: 40px;
+            background-color: palegreen;
+        }
+        .list-member li {
+            width: 200px;
+            height: 40px;
+            background-color: salmon;
+        }
+        .list-member li button {
+            display: block;
+            height: 100%;
+            width: 100%;
+            background-color: salmon;
+            border: 1px solid black;
+            border-top: none;
+        }
+        .list-member li button:hover {
+            
+            margin: 0 auto;
+            width: 184px;
+            height: 30px;
+            background: #F8E4FF;
+            border-radius: 8px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <button class="btn-select">최애 프로그래밍 언어</button>
+    <ul class="list-member">
+        <li><button type="button">Python</button></li>
+        <li><button type="button">Java</button></li>
+        <li><button type="button">JavaScript</button></li>
+        <li><button type="button">C#</button></li>
+        <li><button type="button">C/C++</button></li>
+    </ul>
+</body>
+</html>

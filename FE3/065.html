@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .txt-hide {
+            position: absolute;
+            /* 자르는건데 지금은 안씀 */
+            clip:rect(0 0 0 0);
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            overflow: hidden;
+        }
+
+        .labl-hold::before {
+            display: inline-block;
+            /* 이거 없으면 가상요소 존재 X */
+            content: ' ';
+            /* 이미지의 크기에 맞춰서 */
+            width: 22px;
+            height: 22px;
+            vertical-align: -5px;
+            /* 이미지를 content 안에 넣으면 스크린리더가 이미지라고 읽어버리니까 백그라운드로 처리 */
+            background-image: url(/css_sprites_retina.png);
+            /* retina로 하면 좌표도 두배가 됨 */
+            background-position: -52px -10px;
+            /* retina때문에 두배로 가져온 이미지 크기를 원본 크기로 맞춤 */
+            background-size: 84px 42px;
+        }
+
+        /* 체크했을 때 가상요소의 그림이 바뀌도록 */
+        /* input과 label이 연결되어 있어서 input을 숨겨도 체크할 수 있음 */
+        .inp-hold:checked+.labl-hold::before {
+            background-image: url(/css_sprites_retina.png);
+            background-position: -10px -10px;
+            background-size: 84px 42px;
+        }
+
+        .inp-hold:focus+.labl-hold::before {
+            /* border는 box model 안에 있어서 레이아웃에 영향을 미침 */
+            outline: 2px solid #000;
+            /* outline의 여유공간 */
+            outline-offset: 5px;
+        }
+    </style>
+</head>
+<body>
+    <input type="checkbox" id="inpHold" class="inp-hold txt-hide">
+    <label for="inpHold" class="labl-hold">선택해주세요</label>
+</body>
+</html>
