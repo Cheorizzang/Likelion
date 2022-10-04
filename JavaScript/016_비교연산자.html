@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>비교연산자</title>
+</head>
+<body>
+    <script>
+        const one = 10;
+        const two = 3;
+        const one_ = '10';
+
+        console.log(one > two); // true
+        console.log(one >= two); // true
+        console.log(one < two); // false 
+        console.log(one <= two); // false
+        console.log(one == two); // false
+        console.log(one === two); // false (타입까지 비교하는 것. 다른 언어에는 없음)
+        console.log(one !== two); // true (불일치 연산자. 자료형이나 값이 다를 때 true)
+
+        // 우리를 힘들게 하는 JS
+        console.log("-----");
+        console.log(one == one_); // true (너무 관대함)
+        console.log(one === one_); // false
+    </script>
+</body>
+</html>

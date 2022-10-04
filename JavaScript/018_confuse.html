@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>confuse</title>
+</head>
+<body>
+    <script>
+        console.log("- 0 -");
+        // true와 숫자값의 비교
+        console.log(true == 1); // true
+        console.log(false == 0); // true
+        console.log(true === 1); // false 
+        console.log(false === 0); // false
+
+        console.log("- 1 -");
+        console.log(NaN == NaN); // false
+        console.log(NaN === NaN); // false
+
+        console.log("- 2 -");
+        // true일 것 같은 혼란스러운 녀석들
+        console.log(false == null); // false
+        console.log(false == NaN); // false
+        console.log(false == undefined); // false
+
+        console.log("- 3 -");
+        // + 연산자를 활용한 형변환
+        console.log(+false); // 0 (앞에 + 붙으면 숫자로 형변환)
+        console.log(+true); // 1
+        console.log(false * 1); // 0
+        console.log(true * 1); // 1
+        console.log(1 + ""); // 1 (string)
+        console.log("" + 1); // 1 (string) -> 둘 중에 하나가 문자열이면 문자열로 바뀜
+        console.log(NaN + ""); // NaN (string)
+        console.log(Infinity + ""); // Infinity (string)
+        console.log(true + ""); // true (string)
+        console.log(false + ""); // false (string)
+        console.log("100" + 10); // 10010 
+        console.log(+ "100" + 10); // 110 (숫자로 형변환)
+
+        console.log(0 == -0); // true
+    </script>
+</body>
+</html>
