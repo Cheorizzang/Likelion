@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM example1</title>
+    <style>
+        .square {
+            width: 100px;
+            height: 100px;
+            background-color: black;
+            margin-bottom: 50px;
+        }
+        .test {
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <div class="square"></div>
+    <button class="btn1">click here!</button>
+    <script>
+        const btn1 = document.querySelector(".btn1");
+
+        btn1.addEventListener('click', function(){
+            document.querySelector(".square").classList.toggle("test");
+        })
+    </script>
+</body>
+</html>

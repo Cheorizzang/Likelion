@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>innerHTML & insertAdjacentHTML</title>
+</head>
+<body>
+    <p></p>
+
+    <strong class="sayHi">
+        반갑습니다.
+    </strong>
+    <script>
+        // https://developer.mozilla.org/ko/docs/Web/API/Element/innerHTML#security_considerations
+
+        const name = "john";
+        const txt = document.querySelector('p');
+        txt.innerHTML = name;
+
+        const name2 = "<script>alert('I am john in an annoying alert!'')<\/script>" // \를 써서 정규표현식이 아니라는걸 알려줘야 함
+        txt.innerHTML = name2; // harmless in this case
+
+        const name3 = "<img src='x' onerror='alert(1)'>";
+        // onerror는 이미지 로딩이 실패했을 때의 이벤트
+        txt.innerHTML = name3; // shows the alert
+
+        // insertAdjacentHTML : 요소 노드를 주어진 위치에 배치합니다.
+
+        const sayHi = document.querySelector('.sayHi');
+        sayHi.insertAdjacentHTML('beforebegin', '<span>안녕하세요 저는</span>');
+        sayHi.insertAdjacentHTML('afterbegin', '<span>재현입니다</span>'); // 타겟 요소의 첫번째 자식으로
+        sayHi.insertAdjacentHTML('beforeend', '<span>면접오시면</span>'); // 타겟 요소의 마지막 자식으로
+        sayHi.insertAdjacentHTML('afterend', '<span>치킨사드릴게요</span>');
+    </script>
+</body>
+</html>
