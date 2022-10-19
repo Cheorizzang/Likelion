@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>화살표 함수의 this</title>
+</head>
+<body>
+    <button>버튼</button>
+    <script>
+        const btn = document.querySelector('button');
+
+        // 화살표 함수 안의 this는 자신을 둘러싸고 있는 외부 환경을 가리킴
+        const myObj = {
+            name: 'test',
+            test(){
+                btn.addEventListener('click', (event) => {
+                    console.log(this); // myObj
+                    console.log(this.name); // test
+                })
+            } // ES6부터 function 키워드 생략 가능
+        }
+    
+        myObj.test();
+    </script>
+</body>
+</html>

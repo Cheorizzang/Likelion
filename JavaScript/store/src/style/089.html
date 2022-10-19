@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- 쇼핑몰에 들어왔는데 VIP 회원으로 로그인되어 있을 경우만 가격 혜택을 받을 수 있음 -->
+    <figure>
+        <img src="" alt="">
+        <figcaption>
+            상품 가격 : 39,000원 <span class="hidden">(주의) VIP 회원이 아니시라면 혜택을 받으실 수 없습니다.</span>
+        </figcaption>
+    </figure>
+    <script>
+        const txt = document.querySelector('figcaption');
+
+        console.log(txt.textContent); // 숨겨진 것도 다 가져옴
+        console.log(txt.innerText); // 사람이 볼 수 있는 것만 가져옴
+    </script>
+</body>
+</html>

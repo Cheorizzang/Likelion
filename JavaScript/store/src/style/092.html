@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>이벤트 위임 - 이벤트 흐름을 이용한 테크닉</title>
+        <link rel="stylesheet" href="../reset.css">
+        <style></style>
+    </head>
+    <body>
+        <article class="parent">
+            <ol>
+                <li><button class="btn-first" type="button">버튼1</button></li>
+                <li><button type="button">버튼2</button></li>
+                <li><button type="button">버튼3</button></li>
+            </ol>
+        </article>
+        <script>
+            // 부모한테 이벤트 리스너 달아주면 모든 자식요소에게 동일한 이벤트를 발생시킬 수 있음
+            const parent = document.querySelector('.parent');
+            parent.addEventListener('click', function (event) {
+                console.log(event.target);
+                if (event.target.nodeName === "BUTTON") {
+                    event.target.innerText = "버튼4";
+                }
+            })
+        </script>
+    </body>
+</html>
