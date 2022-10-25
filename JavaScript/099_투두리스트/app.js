@@ -87,7 +87,7 @@ function getItem(val, complete) {
 
   btn.addEventListener("click", () => {
     li.remove();
-    buildTasks();
+    // buildTasks();
     showDownload();
   });
 }
