@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function Person() {
+        let age = 30; // 비공개 프로퍼티로 담을 클로저 공간
+
+        function innerPerson() {}
+
+        innerPerson.prototype.getAge = function () {
+          return age;
+        };
+
+        return innerPerson;
+      }
+
+      const PersonFunc = Person();
+      const person = new PersonFunc();
+
+      // IIFE
+      // (function () {
+      //     console.log('즉시 실행 함수');
+      // })();
+
+      const NewPerson = (function () {
+        let age = 30;
+
+        function innerPerson() {}
+
+        innerPerson.prototype.getAge = function () {
+          return age;
+        };
+
+        return innerPerson;
+      })();
+
+      const personWithSecret = new NewPerson();
+    </script>
+  </body>
+</html>
