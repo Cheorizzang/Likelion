@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="root">test</div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"
+        integrity="sha512-kp7YHLxuJDJcOzStgd6vtpxr4ZU9kjn77e6dBsivSz+pUuAuMlE2UTdKB7jjsWT84qbS8kdCWHPETnP/ctrFsA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- html에서 리액트를 모듈화해서 뽑는 방법. 몰라도 됨. 교육을 위한 것. -->
+    <!-- type="babel"이 없으면 JSX 문법을 사용할 수 없음 -->
+    <script data-plugins="transform-es2015-modules-umd" type="text/babel" src="./Main.js"></script>
+    <script data-plugins="transform-es2015-modules-umd" type="text/babel">
+        import Main from "./Main.js";
+
+        Main();
+    </script>
+</body>
+
+</html>
