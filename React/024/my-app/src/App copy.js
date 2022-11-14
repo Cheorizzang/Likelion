@@ -1,40 +1,33 @@
-import React, { useState } from 'react';
+function Resume({ 이름, 취미, 자기소개 }) {
+    let like = 0;
 
-function Resume(props) {
-    const [like, setLike] = useState(0); //초기값 0
-    // let heart = like % 2 === 1 ? '❤️' : '';
-    // let clap = like.toString().match(/3|6|9/g) ? '👏' : '';
-    let clap = '';
-    for (let i of String(like)) {
-        if (i === '3') {
-            clap = '👏';
-        } else if (i === '6') {
-            clap = '👏';
-        } else if (i === '9') {
-            clap = '👏';
-        }
-    }
-
-    // React에서 이벤트 핸들러의 함수명 앞에 'handle'을 많이 붙임
-    function handleClickLike() {
-        // setLike(like + 1)
-        // console.log(like);
-        setLike(like + 1);
+    function clickLike() {
+        like += 1;
+        console.log(like);
     }
 
     return (
-        <div>
-            <button onClick={handleClickLike}>like : {like}</button>
-            <span>{clap ? clap : ''}</span>
-        </div>
+        <section>
+            <h2>{이름}</h2>
+            <p>{취미}</p>
+            <p>{자기소개}</p>
+            {/* 
+          여기가 왜 증가되지 않을까요? 변수가 변경이 된다고 하더라도 렌더링이 다시 일어나지 않기 때문입니다!
+        */}
+            <button onClick={clickLike}>{like}</button>
+        </section>
     );
 }
 
 function App() {
     return (
-        <div>
-            <Resume />
-        </div>
+        <main>
+            <Resume
+                이름="이호준"
+                취미="코딩"
+                자기소개="안녕하세요. 제주코딩베이스캠프 이호준입니다."
+            />
+        </main>
     );
 }
 

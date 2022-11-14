@@ -1,51 +1,37 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
-function Resume(props) {
+function Resume({ 이름, 취미, 자기소개 }) {
     const [like, setLike] = useState(0);
-    // let heart = like % 2 === 1 ? '❤️' : '';
-
-    // let heart = ''
-    // for (let i of String(like)){
-    //   if(i === '3'){
-    //     heart = '짝👏'
-    //   } else if (i === '6'){
-    //     heart = '짝👏'
-    //   } else if (i === '9'){
-    //     heart = '짝👏'
-    //   }
-    // }
-
-    // '123123'.match(/[369]/g)
-    // ['3', '3']
-    // let heart = String(like).match(/[369]/g)? '짝👏' : '';
-
-    // 123123'.split("").filter(v => v === '3' || v === '6' || v === '9')
-    // ['3', '3']
-    let heart = String(like)
-        .split('')
-        .filter((v) => v === '3' || v === '6' || v === '9').length
-        ? '짝👏'
-        : '';
+    // const [like, setLike] = useState(100)
+    // const [like, setLike] = useState('hello world')
 
     function handleClickLike() {
-        // setLike(like + 1)
-        // console.log(like);
-        setLike(like + 1);
+        // like += 1
+        setLike(like + 1); // like = like + 1
+        // setLike(like + 2); // like = like + 2
+        // setLike(like + 'hello' + 'world'); // like = like + 'hello' + 'world'
+        console.log(like);
     }
 
     return (
-        <div>
-            <button onClick={handleClickLike}>like : {like}</button>
-            <span>{heart ? heart : ''}</span>
-        </div>
+        <section>
+            <h2>{이름}</h2>
+            <p>{취미}</p>
+            <p>{자기소개}</p>
+            <button onClick={handleClickLike}>{like}</button>
+        </section>
     );
 }
 
 function App() {
     return (
-        <div>
-            <Resume />
-        </div>
+        <main>
+            <Resume
+                이름="이호준"
+                취미="코딩"
+                자기소개="안녕하세요. 제주코딩베이스캠프 이호준입니다."
+            />
+        </main>
     );
 }
 
