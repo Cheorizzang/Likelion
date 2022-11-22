@@ -10,8 +10,13 @@
     <div id="red"></div>
     <div id="green"></div>
     <div id="blue"></div>
+    <div id="pink"></div>
+    <div id="gray"></div>
 
     <script>
+        // 문제
+        // 1. 새로운 컴포넌트가 생성이 될 때 코드가 컴포넌트의 개수만큼 기하급수적으로 늘어남
+        // 2. 새로운 컴포넌트를 만들었는데 이전 컴포넌트도 모두 수정해야함
         function red() {
             document.querySelector('#red').innerHTML = `
                 <div class="container" id="component_red">
@@ -20,6 +25,8 @@
                     document.querySelector('#component_red').style.backgroundColor = 'red';
                     document.querySelector('#component_green').style.backgroundColor = 'red';
                     document.querySelector('#component_blue').style.backgroundColor = 'red';
+                    document.querySelector('#component_pink').style.backgroundColor = 'red';
+                    document.querySelector('#component_gray').style.backgroundColor = 'red';
                     ">
                 </div>
             `;
@@ -33,6 +40,8 @@
                     document.querySelector('#component_red').style.backgroundColor = 'green';
                     document.querySelector('#component_green').style.backgroundColor = 'green';
                     document.querySelector('#component_blue').style.backgroundColor = 'green';
+                    document.querySelector('#component_pink').style.backgroundColor = 'green';
+                    document.querySelector('#component_gray').style.backgroundColor = 'green';
                     ">
                 </div>
             `;
@@ -46,11 +55,43 @@
                     document.querySelector('#component_red').style.backgroundColor = 'blue';
                     document.querySelector('#component_green').style.backgroundColor = 'blue';
                     document.querySelector('#component_blue').style.backgroundColor = 'blue';
+                    document.querySelector('#component_pink').style.backgroundColor = 'blue';
+                    document.querySelector('#component_gray').style.backgroundColor = 'blue';
                     ">
                 </div>
             `;
         }
         blue();
+        function pink() {
+            document.querySelector('#pink').innerHTML = `
+                <div class="container" id="component_pink">
+                    <h1>pink</h1>
+                    <input type="button" value="fire" onclick="
+                    document.querySelector('#component_red').style.backgroundColor = 'pink';
+                    document.querySelector('#component_green').style.backgroundColor = 'pink';
+                    document.querySelector('#component_blue').style.backgroundColor = 'pink';
+                    document.querySelector('#component_pink').style.backgroundColor = 'pink';
+                    document.querySelector('#component_gray').style.backgroundColor = 'pink';
+                    ">
+                </div>
+            `;
+        }
+        pink();
+        function gray() {
+            document.querySelector('#gray').innerHTML = `
+                <div class="container" id="component_gray">
+                    <h1>gray</h1>
+                    <input type="button" value="fire" onclick="
+                    document.querySelector('#component_red').style.backgroundColor = 'gray';
+                    document.querySelector('#component_green').style.backgroundColor = 'gray';
+                    document.querySelector('#component_blue').style.backgroundColor = 'gray';
+                    document.querySelector('#component_pink').style.backgroundColor = 'gray';
+                    document.querySelector('#component_gray').style.backgroundColor = 'gray';
+                    ">
+                </div>
+            `;
+        }
+        gray();
     </script>
 </body>
 
