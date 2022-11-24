@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>hello sop!</h1>
+    <!-- iframe으로 다른 html을 불러올 수 있음 -->
+    <iframe class="test" src="test.html" frameborder="0"></iframe>
+    <!-- 저작권 때문에 안되는 거 같음 -->
+    <!-- <iframe class="youtube" width="560" height="315" src="https://www.youtube.com/embed/UGB_Bsm5Unk"
+        title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe> -->
+    <iframe class="youtube" width="1083" height="609" src="https://www.youtube.com/embed/4TWR90KJl84"
+        title="aespa 에스파 'Next Level' MV" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+
+    <script>
+        let x = document.querySelector('.test');
+        let y = document.querySelector('.youtube');
+
+        // load event : 요청한 html이 가진 모든 리소스가 로딩이 완료되었을 때 트리거
+        // contentDocument : 만약 iframe 과 iframe's parent document 가 같은 origin을 가진다면 iframe의 document 객체를 반환합니다.
+
+        x.addEventListener('load', () => {
+            console.log('same origin: ', x.contentDocument);
+            x.contentDocument.body.style.backgroundColor = 'red';
+        })
+
+        y.addEventListener('load', () => {
+            console.log('same origin: ', y.contentDocument);
+            y.contentDocument.body.style.backgroundColor = 'red';
+        })
+    </script>
+</body>
+
+</html>
